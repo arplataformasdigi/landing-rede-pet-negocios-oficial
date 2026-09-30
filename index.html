@@ -1503,9 +1503,6 @@ function map3d() {
   map.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(topLine), new THREE.LineBasicMaterial({ color: 0xc6ef6a, transparent: true, opacity: .95 })));
   const botLine = outline.map(p => new THREE.Vector3(p.x, p.y, -.02)); botLine.push(botLine[0].clone());
   map.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(botLine), new THREE.LineBasicMaterial({ color: 0x3a9a6c, transparent: true, opacity: .5 })));
-  /* sombra/halo sob o mapa */
-  const halo = new THREE.Mesh(new THREE.PlaneGeometry(14, 14), new THREE.MeshBasicMaterial({ map: radialTex('rgba(30,138,94,.55)', 'rgba(30,138,94,.15)', 'rgba(30,138,94,0)'), transparent: true, depthWrite: false }));
-  halo.position.z = -.4; map.add(halo);
 
   const inside = (x, y) => { let c = false; for (let i = 0, j = outline.length - 1; i < outline.length; j = i++) { const a = outline[i], b = outline[j]; if (((a.y > y) !== (b.y > y)) && (x < (b.x - a.x) * (y - a.y) / (b.y - a.y) + a.x)) c = !c; } return c; };
   let minX = 1e9, maxX = -1e9, minY = 1e9, maxY = -1e9; outline.forEach(p => { minX = Math.min(minX, p.x); maxX = Math.max(maxX, p.x); minY = Math.min(minY, p.y); maxY = Math.max(maxY, p.y); });

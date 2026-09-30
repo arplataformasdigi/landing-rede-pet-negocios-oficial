@@ -88,6 +88,13 @@ nav.menu{display:flex;gap:30px;font-size:14.5px;color:#333}
 nav.menu a{position:relative}
 nav.menu a::after{content:'';position:absolute;left:0;right:0;bottom:-4px;height:2px;background:var(--lime);transform:scaleX(0);transform-origin:left;transition:transform .3s}
 nav.menu a:hover::after{transform:scaleX(1)}
+.hact{display:flex;align-items:center;gap:10px}
+.burger{display:none;width:42px;height:42px;border-radius:12px;border:1px solid var(--line);background:var(--paper);flex-direction:column;align-items:center;justify-content:center;gap:4px;flex:none}
+.burger span{display:block;width:18px;height:2px;border-radius:2px;background:var(--ink);transition:transform .3s,opacity .3s}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+section[id]{scroll-margin-top:74px}
 .progress{position:absolute;left:0;bottom:-1px;height:2px;width:100%;background:var(--green);transform-origin:left;transform:scaleX(0)}
 
 /* ---------- hero ---------- */
@@ -146,7 +153,7 @@ nav.menu a:hover::after{transform:scaleX(1)}
 /* ---------- desafios ---------- */
 .switch{display:inline-flex;position:relative;background:var(--bg2);border:1px solid var(--line);border-radius:999px;padding:5px;margin-top:30px}
 .switch button{position:relative;z-index:1;padding:10px 20px;font-weight:600;font-size:14px;border-radius:999px;transition:color .3s}
-.switch .pill{position:absolute;top:5px;bottom:5px;left:5px;border-radius:999px;background:var(--ink);transition:transform .45s cubic-bezier(.2,.8,.2,1),width .45s}
+.switch .pill{position:absolute;top:5px;left:5px;border-radius:999px;background:var(--ink);transition:transform .45s cubic-bezier(.2,.8,.2,1),width .45s}
 .switch button.on{color:#fff}
 .duo{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:46px}
 .duo>div{border-radius:28px;padding:40px;transition:opacity .5s,transform .5s cubic-bezier(.2,.8,.2,1),filter .5s}
@@ -548,7 +555,12 @@ footer small{flex-basis:100%;font-family:var(--mono);font-size:12px}
 @keyframes shine{0%,60%{left:-50%}100%{left:120%}}
 
 @media (max-width:980px){
-  nav.menu{display:none}
+  .burger{display:flex}
+  nav.menu{position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;padding:8px 24px 16px;background:rgba(248,246,241,.98);border-bottom:1px solid var(--line);box-shadow:0 20px 30px -20px rgba(17,20,24,.25);font-size:16px;opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .25s,transform .25s,visibility .25s}
+  nav.menu.open{opacity:1;visibility:visible;transform:none}
+  nav.menu a{padding:14px 0;border-bottom:1px solid var(--line)}
+  nav.menu a:last-child{border-bottom:0}
+  nav.menu a::after{display:none}
   .hero .wrap{grid-template-columns:1fr;padding-top:40px;gap:8px}
   .stage{height:420px}
   .node{width:48px;height:48px;margin:-24px 0 0 -24px}
@@ -560,6 +572,7 @@ footer small{flex-basis:100%;font-family:var(--mono);font-size:12px}
   .mapcard{padding:28px 18px}
   .benefits{grid-template-columns:1fr 1fr}
   .duo,.appgrid,.biz,.eng,.vs,.dgrid,.dgrid2{grid-template-columns:1fr}
+  .appgrid>*,.biz>*,.eng>*{min-width:0}
   .cards3,.nots,.hi3,.lists{grid-template-columns:1fr}
   .mais{grid-template-columns:1fr 1fr}
   .dkpis{grid-template-columns:1fr 1fr}
@@ -583,10 +596,13 @@ footer small{flex-basis:100%;font-family:var(--mono);font-size:12px}
   .floaty{display:none}
   .pad{padding:80px 0}
   .quote{padding:34px 26px}
+  .phone{width:min(300px,100%);height:auto;aspect-ratio:1/2}
+  .bigcta{padding:22px 28px;border-radius:26px;text-align:center}
+  footer nav a{padding:6px 0}
 }
 @media (max-width:560px){
   .brand{white-space:nowrap;font-size:17px}
-  header.top .btn{padding:10px 16px;font-size:13px}
+  header.top .btn{padding:10px 16px;font-size:13px;white-space:nowrap}
   .switch button{padding:8px 11px;font-size:12.5px}
   .dk b{font-size:21px}
   .dk{padding:14px}
@@ -603,6 +619,39 @@ footer small{flex-basis:100%;font-family:var(--mono);font-size:12px}
   .dchrome .url{display:none}
   .benefits{grid-template-columns:1fr}
   .mais{grid-template-columns:1fr}
+
+  .container{padding:0 18px}
+  .hero h1{font-size:clamp(32px,9.6vw,40px)}
+  .ctas{flex-wrap:wrap;gap:14px 22px}
+  .link{display:inline-block;padding:10px 0 4px}
+  .btn{white-space:normal;text-align:center;justify-content:center}
+  .btn.lg{max-width:100%}
+  #convite .btn.lg{width:100%}
+  .bigcta{font-size:18px;padding:18px 22px;gap:10px}
+  .bigcta svg{width:20px;height:20px}
+  .switch{flex-wrap:wrap;justify-content:center;border-radius:22px;max-width:100%}
+  .hub{grid-template-columns:1fr 1fr}
+  .hub .pt{padding:11px 12px;font-size:14px;gap:8px}
+  .duo>div{padding:26px 20px}
+  .item{padding:16px}
+  .frag{padding:32px 20px}
+  .lst,.card{padding:24px}
+  .mapcard{padding:24px 14px}
+  .quote{padding:28px 22px}
+  .vs .l,.vs .r{padding:34px 20px}
+  #cookie-banner{left:12px;right:12px;bottom:12px;padding:18px}
+}
+@media (max-width:380px){
+  .brand{font-size:16px}
+  header.top .btn{padding:9px 13px;font-size:12.5px}
+  .hact{gap:8px}
+  .burger{width:38px;height:38px}
+  .switch button{padding:8px 9px;font-size:12px}
+  .hub .pt{font-size:13px;padding:10px}
+  .mini{padding:16px}
+  .kpis{gap:8px}
+  .kpi{padding:10px}
+  .kpi b{font-size:18px}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;animation-iteration-count:1!important;transition-duration:.01ms!important;transition-delay:0s!important}
@@ -621,8 +670,11 @@ footer small{flex-basis:100%;font-family:var(--mono);font-size:12px}
 <header class="top">
   <div class="container">
     <a class="brand" href="#top">Rede Pet Care</a>
-    <nav class="menu"><a href="#top">Home</a><a href="#ferramentas">Ferramentas</a><a href="#gestao">Gestão</a><a href="Planos.dc.html">Planos</a><a href="Privacidade.dc.html">Privacidade</a><a href="Termos.dc.html">Termos</a></nav>
-    <a class="btn" href="https://app.redepetcare.com.br/auth">Comece agora</a>
+    <nav class="menu" id="menu"><a href="#top">Home</a><a href="#ferramentas">Ferramentas</a><a href="#gestao">Gestão</a><a href="Planos.dc.html">Planos</a><a href="Privacidade.dc.html">Privacidade</a><a href="Termos.dc.html">Termos</a></nav>
+    <div class="hact">
+      <a class="btn" href="https://app.redepetcare.com.br/auth">Comece agora</a>
+      <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+    </div>
   </div>
   <div class="progress" id="progress"></div>
 </header>
@@ -1090,6 +1142,13 @@ if (finePointer && !reduce) {
 }
 $$('.spot').forEach(el => el.addEventListener('pointermove', e => { const r = el.getBoundingClientRect(); el.style.setProperty('--mx', (e.clientX - r.left) + 'px'); el.style.setProperty('--my', (e.clientY - r.top) + 'px'); }));
 
+const burger = $('#burger'), menu = $('#menu');
+const setMenu = open => { menu.classList.toggle('open', open); burger.setAttribute('aria-expanded', open); burger.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu'); };
+burger.addEventListener('click', () => setMenu(!menu.classList.contains('open')));
+$$('a', menu).forEach(a => a.addEventListener('click', () => setMenu(false)));
+document.addEventListener('click', e => { if (menu.classList.contains('open') && !e.target.closest('header.top')) setMenu(false); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+
 const prog = $('#progress');
 const onScroll = () => { const h = document.documentElement; prog.style.transform = `scaleX(${h.scrollTop / (h.scrollHeight - h.clientHeight)})`; };
 addEventListener('scroll', onScroll, { passive: true }); onScroll();
@@ -1132,7 +1191,8 @@ onView($('#typed'), el => {
   const sw = $('#duoSwitch'), pill = $('.pill', sw), duo = $('#duo'), bts = $$('button', sw);
   const set = b => {
     bts.forEach(x => x.classList.toggle('on', x === b));
-    pill.style.width = b.offsetWidth + 'px'; pill.style.transform = `translateX(${b.offsetLeft - 5}px)`;
+    pill.style.width = b.offsetWidth + 'px'; pill.style.height = b.offsetHeight + 'px';
+    pill.style.transform = `translate(${b.offsetLeft - 5}px,${b.offsetTop - 5}px)`;
     duo.classList.remove('focus-a', 'focus-b'); if (b.dataset.f) duo.classList.add(b.dataset.f);
   };
   bts.forEach(b => b.addEventListener('click', () => set(b)));

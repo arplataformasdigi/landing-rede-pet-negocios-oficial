@@ -403,7 +403,7 @@ section[id]{scroll-margin-top:74px}
 .freq.w{background:var(--lime-soft);color:var(--green-d)}
 .tablewrap{overflow-x:auto;margin:0 -4px}
 
-.dswitch{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:44px}
+.dswitch{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:44px}
 .dswitch button{display:flex;align-items:center;gap:14px;text-align:left;padding:18px 20px;border-radius:20px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);color:#fff;transition:background .3s,border-color .3s,transform .3s,box-shadow .3s}
 .dswitch button:hover{transform:translateY(-2px);border-color:rgba(198,239,106,.4)}
 .dswitch button.on{background:var(--lime);color:var(--ink);border-color:var(--lime);box-shadow:0 18px 40px -18px rgba(198,239,106,.6)}
@@ -412,6 +412,7 @@ section[id]{scroll-margin-top:74px}
 .dswitch b{display:block;font-size:17px;letter-spacing:-.02em}
 .dswitch small{font-size:13px;opacity:.7}
 .dswitch .go{margin-left:auto;font-size:12px;font-weight:700;font-family:var(--mono);letter-spacing:.06em;opacity:.8;white-space:nowrap}
+@media (max-width:1180px){.dswitch .go{display:none}.dswitch b{font-size:16px}}
 .dash{margin-top:18px}
 .dash.swap .dbody{animation:swapin .5s cubic-bezier(.2,.8,.2,1)}
 @keyframes swapin{from{opacity:0;transform:translateY(10px)}}
@@ -921,11 +922,12 @@ footer small{flex-basis:100%;font-family:var(--mono);font-size:12px}
     <div class="center">
       <span class="tag dark rv"><i></i>Gestão de vendas</span>
       <h2 class="h2 rv">Seus números, <span class="lime">claros como nunca.</span></h2>
-      <p class="sub rv">Veja mês a mês o que mais saiu, quanto você faturou e quais clientes mais voltam, nos agendamentos e nas vendas do seu petshop. Escolha um painel abaixo e explore.</p>
+      <p class="sub rv">Veja mês a mês o que mais saiu, quanto você faturou e quais clientes mais voltam, nos agendamentos, nas vendas do seu petshop e nas cotações de medicamentos. Escolha um painel abaixo e explore.</p>
     </div>
     <div class="dswitch rv" id="dSwitch">
       <button class="on" data-d="ag"><span class="ic"><svg class="i" data-i="cal"></svg></span><span><b>Painel de Agendamentos</b><small>Clínicas, groomers, hotéis e daycares</small></span><span class="go">VER PAINEL →</span></button>
       <button data-d="ps"><span class="ic"><svg class="i" data-i="bag"></svg></span><span><b>Painel de Vendas · Petshop</b><small>Produtos, pedidos e clientes da loja</small></span><span class="go">VER PAINEL →</span></button>
+      <button data-d="md"><span class="ic"><svg class="i" data-i="pill"></svg></span><span><b>Painel de Cotações · Farmácia</b><small>Medicamentos, cotações e clientes</small></span><span class="go">VER PAINEL →</span></button>
     </div>
     <div class="dash rv" id="dash">
       <div class="dchrome"><div class="dots"><i></i><i></i><i></i></div><div class="url" id="dUrl"></div><span class="demo">Dados fictícios</span></div>
@@ -1614,7 +1616,7 @@ else { $('#heroNodes').style.display = 'none'; }
     ag: {
       title: 'Relatório de Agendamentos', biz: 'Banho & Cia Pet · Clínica e Estética', url: 'app.redepetcare.com.br/negocio/agendamentos/relatorio',
       unit: 'serviços', unitS: 'serviço', item: 'Serviços', itemS: 'serviço', all: 'Todos os serviços', done: 'Realizados', recs: 'Atendimentos', recsS: 'atendimentos',
-      k1: 'Serviços realizados', ico1: 'box', timesLbl: 'Vezes', qtyLbl: 'Serviços',
+      k1: 'Serviços realizados', ico1: 'box', timesLbl: 'Vezes', qtyLbl: 'Serviços', recLbl: 'Atendimentos',
       items: [['Banho completo', 65, 46, [1.2, 1, .95, .9, .85, .8, .82, .88, .98]], ['Banho e tosa', 95, 32, [1.25, 1, .95, .9, .85, .8, .8, .86, 1]], ['Tosa higiênica', 45, 17, [1, 1, 1, 1, 1, 1, 1, 1, 1]],
         ['Consulta clínica', 150, 21, [1, 1, 1.05, 1.1, 1.1, 1.05, 1, 1, 1]], ['Vacinação V10', 120, 11, [.8, .9, 1.2, 1.6, 1.5, 1, .9, .9, 1]], ['Hospedagem (diária)', 90, 19, [1.9, 1.2, .9, .9, .8, .9, 1.6, 1, .8]], ['Daycare (diária)', 70, 15, [1.1, 1, 1, 1, 1, 1, 1.2, 1, 1]]],
       gen(m, items) {
@@ -1633,7 +1635,7 @@ else { $('#heroNodes').style.display = 'none'; }
     ps: {
       title: 'Relatório de Vendas', biz: 'Pet Shop Amigo · Loja online e retirada', url: 'app.redepetcare.com.br/loja/relatorio-de-vendas',
       unit: 'produtos', unitS: 'produto', item: 'Produtos', itemS: 'produto', all: 'Todos os produtos', done: 'Vendidos', recs: 'Pedidos', recsS: 'pedidos',
-      k1: 'Produtos vendidos', ico1: 'bag', timesLbl: 'Pedidos', qtyLbl: 'Itens',
+      k1: 'Produtos vendidos', ico1: 'bag', timesLbl: 'Pedidos', qtyLbl: 'Itens', recLbl: 'Pedidos',
       items: [['Ração Premium Cães 15kg', 289, 5, [1, .95, 1, 1, 1, 1, 1, 1, 1.05]], ['Ração Gatos Castrados 10kg', 239, 4, [1, 1, 1, 1, 1, 1, 1, 1, 1]], ['Areia Sanitária 4kg', 39, 6, [1, 1, 1, 1, 1, 1.05, 1.05, 1, 1]], ['Petiscos Naturais', 29, 7, [.9, .9, 1, 1, 1.1, 1, 1, 1, 1.05]],
         ['Antipulgas e Carrapatos', 159, 3, [1.6, 1.5, 1.3, 1, .7, .55, .5, .6, .85]], ['Tapete Higiênico 30un', 79, 3, [1, 1, 1, 1, 1, 1, 1, 1, 1]], ['Shampoo Neutro 500ml', 42, 2, [1.2, 1.1, 1, .9, .8, .8, .8, .9, 1]], ['Roupinha de Inverno', 69, 1, [.1, .1, .3, .8, 2.2, 3.2, 3.3, 2, .6]]],
       gen(m, items) {
@@ -1641,6 +1643,23 @@ else { $('#heroNodes').style.display = 'none'; }
         for (let j = 0; j < n; j++) {
           const r = { m, d: 1 + Math.floor(rnd() * DIM[m]), c: pick(CW), items: [] }, cnt = 1 + (rnd() < .45 ? 1 : 0) + (rnd() < .15 ? 1 : 0);
           for (let t = 0; t < cnt; t++) { const k = pick(items.map(it => it[2] * it[3][m])); if (r.items.some(x => x.k === k)) continue; const q = rnd() < .25 ? 2 : 1; r.items.push({ k, q, v: q * items[k][1] }); }
+          recs.push(r);
+        }
+        return recs;
+      }
+    },
+    md: {
+      title: 'Relatório de Cotações', biz: 'Farmácia Vida Pet · Cotações de medicamentos', url: 'app.redepetcare.com.br/farmacia/cotacoes/relatorio',
+      unit: 'unidades', unitS: 'unidade', item: 'Medicamentos', itemS: 'medicamento', all: 'Todos os medicamentos', done: 'Unidades', recs: 'Cotações', recsS: 'cotações',
+      k1: 'Unidades vendidas', ico1: 'pill', timesLbl: 'Vezes', qtyLbl: 'Unidades', recLbl: 'Cotações',
+      items: [['Dipirona 500mg', 25, 9, [1.2, 1.1, 1, 1, 1.1, 1.2, 1.2, 1.05, 1]], ['Ivermectina 1g', 49, 5, [1, 1, 1.1, 1.1, 1, .9, .9, 1, 1]], ['Simparic 20mg', 89, 6, [1.5, 1.4, 1.2, 1, .8, .7, .7, .8, 1]],
+        ['Bravecto 10–20kg', 249, 3, [1.4, 1.3, 1.1, 1, .8, .7, .7, .8, 1.1]], ['Apoquel 16mg', 289, 2, [1.2, 1.1, 1, .9, .9, .9, .9, 1, 1.2]], ['Meloxicam 2mg', 39, 4, [1, 1, 1, 1.1, 1.2, 1.3, 1.3, 1.1, 1]],
+        ['Amoxicilina + Clavulanato 250mg', 79, 4, [1, 1, 1, 1, 1.1, 1.2, 1.2, 1.1, 1]], ['Prednisolona 20mg', 35, 3, [1.1, 1, 1, 1, 1, 1, 1, 1, 1.1]], ['Omeprazol 10mg', 28, 3, [1, 1, 1, 1, 1, 1, 1, 1, 1]]],
+      gen(m, items) {
+        const recs = [], n = Math.round(46 * [.92, .88, 1, .97, 1.04, 1.08, 1.1, 1.02, 1.06][m] * (1 + m * .015) * (.9 + rnd() * .2));
+        for (let j = 0; j < n; j++) {
+          const r = { m, d: 1 + Math.floor(rnd() * DIM[m]), c: pick(CW), items: [] }, cnt = 1 + (rnd() < .35 ? 1 : 0) + (rnd() < .1 ? 1 : 0);
+          for (let t = 0; t < cnt; t++) { const k = pick(items.map(it => it[2] * it[3][m])); if (r.items.some(x => x.k === k)) continue; const q = rnd() < .3 ? 2 : 1; r.items.push({ k, q, v: q * items[k][1] }); }
           recs.push(r);
         }
         return recs;
@@ -1689,7 +1708,7 @@ else { $('#heroNodes').style.display = 'none'; }
     $('#dKpis').innerHTML = [
       [st.filter != null ? `${S.done}: ${S.items[st.filter][0]}` : S.k1, nf.format(cur.q), `${MESF[M]} de ${YEAR}`, S.ico1, 'hl'],
       ['Faturamento', brl(cur.v), `${MESF[M]} de ${YEAR}`, 'dollar'],
-      [S.recs === SETS.ag.recs ? 'Atendimentos' : 'Pedidos', nf.format(cur.n), `Ticket médio ${brl(cur.n ? cur.v / cur.n : 0)}`, 'receipt'],
+      [S.recLbl, nf.format(cur.n), `Ticket médio ${brl(cur.n ? cur.v / cur.n : 0)}`, 'receipt'],
       ['Clientes', nf.format(cur.c), 'clientes diferentes', 'users'],
       [`Melhor mês de ${YEAR}`, MESF[best], `${nf.format(months[best].q)} ${S.unit} · ${brl(months[best].v)}`, 'trophy']
     ].map(([k, v, s, i, c]) => `<div class="dk5 ${c || ''}"><div><small>${k}</small><b>${v}</b><span>${s}</span></div>${ico(i)}</div>`).join('');
@@ -1708,7 +1727,7 @@ else { $('#heroNodes').style.display = 'none'; }
       el('path', { class: 'bar', d: barPath(X(m) - bw / 2, Y(v), bw, T + ph - Y(v)), fill: isBest ? '#11603e' : '#63b78d', stroke: isSel ? '#111418' : 'none', 'stroke-width': isSel ? 2 : 0, style: `--k:${m}` }, svg);
       if (isSel || isBest) el('text', { x: X(m), y: Y(v) - 7, 'text-anchor': 'middle', class: 'val' }, svg).textContent = key === 'v' ? brlK(v).replace('R$ ', '') : nf.format(v);
       const hit = el('rect', { class: 'hit', x: L + band * m, y: T, width: band, height: ph + Bm }, svg);
-      hit.addEventListener('pointermove', e => { const x = months[m]; showTip(e, `<b>${MESF[m]} de ${YEAR}${isBest ? ' · mês de pico' : ''}</b><div class="k"><i style="background:${isBest ? '#11603e' : '#63b78d'}"></i>${S.done}<em>${nf.format(x.q)}</em></div><div class="k">Faturamento<em>${brl(x.v)}</em></div><div class="k">${S.recs === SETS.ag.recs ? 'Atendimentos' : 'Pedidos'}<em>${nf.format(x.n)}</em></div><div class="k" style="color:#9aa">clique para ver este mês</div>`); });
+      hit.addEventListener('pointermove', e => { const x = months[m]; showTip(e, `<b>${MESF[m]} de ${YEAR}${isBest ? ' · mês de pico' : ''}</b><div class="k"><i style="background:${isBest ? '#11603e' : '#63b78d'}"></i>${S.done}<em>${nf.format(x.q)}</em></div><div class="k">Faturamento<em>${brl(x.v)}</em></div><div class="k">${S.recLbl}<em>${nf.format(x.n)}</em></div><div class="k" style="color:#9aa">clique para ver este mês</div>`); });
       hit.addEventListener('pointerleave', hideTip);
       hit.addEventListener('click', () => { st.month = m; st.showAll = false; render(); });
     });
@@ -1723,7 +1742,7 @@ else { $('#heroNodes').style.display = 'none'; }
       .filter(r => r.q && (st.filter == null || r.k === st.filter)).sort((a, b) => b.q - a.q || b.v - a.v);
     const totV = S.items.reduce((s, _, k) => s + rsM.reduce((a, r) => a + r.items.filter(x => x.k === k).reduce((b, x) => b + x.v, 0), 0), 0);
     $('#dItemsT').innerHTML = `${S.item} que mais saíram — ${MESF[M]} de ${YEAR} <span class="bdg">${rows.length} ${rows.length === 1 ? S.itemS : S.item.toLowerCase()}</span>`;
-    $('#dItems').innerHTML = `<thead><tr><th>#</th><th>${S.itemS[0].toUpperCase() + S.itemS.slice(1)}</th><th class="r">${S.done}</th><th class="r">Faturamento</th><th class="r">${S.recs === SETS.ag.recs ? 'Atendimentos' : 'Pedidos'}</th><th class="r">Clientes</th><th class="r">% do faturamento</th></tr></thead><tbody>` +
+    $('#dItems').innerHTML = `<thead><tr><th>#</th><th>${S.itemS[0].toUpperCase() + S.itemS.slice(1)}</th><th class="r">${S.done}</th><th class="r">Faturamento</th><th class="r">${S.recLbl}</th><th class="r">Clientes</th><th class="r">% do faturamento</th></tr></thead><tbody>` +
       rows.map((r, i) => `<tr><td class="rk">${i + 1}</td><td><button class="iname ${st.filter === r.k ? 'on' : ''}" data-k="${r.k}">${S.items[r.k][0]}</button></td><td class="r">${nf.format(r.q)}</td><td class="r">${brl(r.v)}</td><td class="r">${nf.format(r.n)}</td><td class="r">${nf.format(r.c)}</td><td class="r"><div class="pbar"><i style="width:${(r.v / totV * 100).toFixed(1)}%"></i></div>${pct(r.v / totV * 100)}</td></tr>`).join('') + '</tbody>';
     $$('.iname', $('#dItems')).forEach(b => b.onclick = () => { const k = +b.dataset.k; st.filter = st.filter === k ? null : k; st.showAll = false; render(); });
 

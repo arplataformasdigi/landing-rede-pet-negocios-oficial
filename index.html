@@ -307,6 +307,43 @@ section[id]{scroll-margin-top:74px}
 .mais div:hover{background:var(--paper)}
 .mais b{display:block;font-size:14.5px}
 .mais span{font-size:12.5px;color:var(--muted);line-height:1.4;display:block}
+.multi{display:grid;grid-template-columns:.85fr 1.15fr;gap:40px;align-items:center;margin-top:18px;background:var(--bg2);border:1px solid var(--line);border-radius:24px;padding:40px}
+.mtag{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:var(--ink);color:var(--lime);padding:7px 14px;border-radius:100px}
+.mtag svg{width:14px;height:14px}
+.mtx h3{font-size:clamp(26px,3vw,34px);line-height:1.1;letter-spacing:-.03em;margin:18px 0 12px}
+.mtx h3 span{background:var(--lime);padding:0 8px;border-radius:6px}
+.mtx>p{font-size:16px;color:var(--muted);line-height:1.55}
+.mtx ul{list-style:none;margin-top:20px;display:flex;flex-direction:column;gap:10px}
+.mtx li{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:#3c4148}
+.mtx li svg{color:var(--green);width:18px;height:18px;margin-top:1px}
+.mpanel{background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:20px;box-shadow:0 40px 70px -40px rgba(17,20,24,.35)}
+.mp-hd{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px}
+.mp-hd small{display:block;font-size:11.5px;color:var(--muted)}
+.mp-hd b{font-size:17px;letter-spacing:-.02em}
+.mp-add{font-size:12.5px;font-weight:700;background:var(--ink);color:#fff;padding:8px 14px;border-radius:100px;white-space:nowrap}
+.mp-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.mp-kpis div{background:var(--bg2);border-radius:14px;padding:12px}
+.mp-kpis small{display:block;font-size:11px;color:var(--muted);line-height:1.3}
+.mp-kpis b{display:block;font-size:22px;letter-spacing:-.03em;margin-top:4px;font-variant-numeric:tabular-nums}
+.mp-kpis .dk{background:var(--ink);color:#fff}
+.mp-kpis .dk small{color:#a3a9b2}
+.mp-kpis .dk b{color:var(--lime)}
+.mp-tabs{display:flex;gap:6px;margin:14px 0 10px;flex-wrap:wrap}
+.mp-tabs button{font:inherit;font-size:12.5px;font-weight:600;color:var(--muted);background:transparent;border:1px solid var(--line);padding:6px 12px;border-radius:100px;cursor:pointer;transition:background .25s,color .25s}
+.mp-tabs button:hover{color:var(--ink)}
+.mp-tabs button.on{background:var(--lime-soft);color:var(--green-d);border-color:rgba(30,138,94,.25)}
+.mp-list{display:flex;flex-direction:column;gap:8px}
+.mp-u{display:grid;grid-template-columns:auto 1fr auto auto;gap:12px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px 14px;transition:opacity .3s,transform .3s}
+.mp-u.off{opacity:.25;transform:scale(.98)}
+.mp-ic{width:40px;height:40px;border-radius:12px;background:var(--cs);color:var(--c);display:grid;place-items:center}
+.mp-info{min-width:0}
+.mp-info b{display:block;font-size:14px;letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mp-info small{display:flex;align-items:center;gap:4px;font-size:11.5px;color:var(--muted);margin-top:2px}
+.mp-info small svg{width:12px;height:12px}
+.mp-mods{display:flex;gap:4px}
+.mp-mods i{font-style:normal;font-size:10.5px;font-weight:600;color:var(--muted2);border:1px dashed var(--line);padding:3px 8px;border-radius:100px}
+.mp-mods i.on{color:var(--green-d);background:var(--lime-soft);border:1px solid rgba(30,138,94,.2)}
+.mp-st{font-family:var(--mono);font-size:10px;font-weight:700;color:var(--green-d);background:var(--lime-soft);padding:4px 8px;border-radius:100px}
 
 /* ---------- dashboard de gestão ---------- */
 .gestao{background:var(--night);overflow:hidden}
@@ -629,6 +666,7 @@ footer small{flex-basis:100%;font-family:var(--mono);font-size:12px}
   .appgrid>*,.biz>*,.eng>*{min-width:0}
   .cards3,.nots,.hi3,.lists{grid-template-columns:1fr}
   .mais{grid-template-columns:1fr 1fr}
+  .multi{grid-template-columns:1fr;gap:28px;padding:28px}
   .dkpis{grid-template-columns:1fr 1fr}
   .dkpis5{grid-template-columns:1fr 1fr}
   .dswitch{grid-template-columns:1fr}
@@ -675,6 +713,11 @@ footer small{flex-basis:100%;font-family:var(--mono);font-size:12px}
   .dchrome .url{display:none}
   .benefits{grid-template-columns:1fr}
   .mais{grid-template-columns:1fr}
+  .multi{padding:20px}
+  .mpanel{padding:14px}
+  .mp-kpis{grid-template-columns:1fr 1fr}
+  .mp-u{grid-template-columns:auto 1fr auto}
+  .mp-mods{grid-column:1/-1;flex-wrap:wrap}
 
   .container{padding:0 18px}
   .hero h1{font-size:clamp(32px,9.6vw,40px)}
@@ -1069,12 +1112,55 @@ footer small{flex-basis:100%;font-family:var(--mono);font-size:12px}
         <li style="--k:4"><svg class="i" data-i="checkc"></svg>Aumente suas vendas com ferramenta de Cross-Sell</li>
         <li style="--k:5"><svg class="i" data-i="checkc"></svg>Recompra com apenas um clique</li></ul></div>
     </div>
-    <div class="mais rv">
-      <div><svg class="i" data-i="users"></svg><p><b>Mais clientes</b><span>Atraia e fidelize tutores todos os dias</span></p></div>
-      <div><svg class="i" data-i="trend"></svg><p><b>Mais vendas</b><span>Venda mais com cupons, cross-sell e recorrência</span></p></div>
-      <div><svg class="i" data-i="clock"></svg><p><b>Mais tempo</b><span>Seus atendentes focando no cliente presencial</span></p></div>
-      <div><svg class="i" data-i="shield"></svg><p><b>Mais organização</b><span>Tenha tudo centralizado em um só lugar</span></p></div>
-      <div><svg class="i" data-i="heart"></svg><p><b>Mais crescimento</b><span>Uma plataforma feita para o sucesso do seu negócio</span></p></div>
+    <div class="multi rv">
+      <div class="mtx">
+        <span class="mtag"><svg class="i" data-i="home"></svg>Multiunidades</span>
+        <h3>Todas as unidades em um <span>mesmo painel.</span></h3>
+        <p>Tem mais de uma empresa? Gerencie todas elas em uma mesma tela.</p>
+        <ul>
+          <li><svg class="i" data-i="checkc"></svg>Clínicas, petshops e farmácias lado a lado</li>
+          <li><svg class="i" data-i="checkc"></svg>Agenda, loja e cotações de cada unidade</li>
+          <li><svg class="i" data-i="checkc"></svg>Ative, edite ou oculte unidades com um clique</li>
+        </ul>
+      </div>
+      <div class="mpanel tilt" id="mpanel">
+        <div class="mp-hd">
+          <div><small>Painel do grupo</small><b>Minhas unidades</b></div>
+          <span class="mp-add">+ Nova unidade</span>
+        </div>
+        <div class="mp-kpis">
+          <div class="dk"><small>Unidades</small><b>3</b></div>
+          <div><small>Agendamentos hoje</small><b>47</b></div>
+          <div><small>Pedidos na loja</small><b>18</b></div>
+          <div><small>Cotações</small><b>9</b></div>
+        </div>
+        <div class="mp-tabs" role="tablist">
+          <button class="on" data-f="all">Todas</button>
+          <button data-f="vet">Clínicas</button>
+          <button data-f="shop">Petshops</button>
+          <button data-f="farma">Farmácias</button>
+        </div>
+        <div class="mp-list">
+          <div class="mp-u" data-t="vet">
+            <span class="mp-ic" style="--c:#7c3aed;--cs:#f1e8ff"><svg class="i" data-i="vet"></svg></span>
+            <div class="mp-info"><b>Clínica Vet Bem-Estar</b><small><svg class="i" data-i="pin"></svg>Centro · Unidade 1</small></div>
+            <div class="mp-mods"><i class="on">Agenda</i><i class="on">Loja</i><i class="on">Cotações</i></div>
+            <span class="mp-st">Ativa</span>
+          </div>
+          <div class="mp-u" data-t="shop">
+            <span class="mp-ic" style="--c:#2a78d6;--cs:#e3efff"><svg class="i" data-i="bag"></svg></span>
+            <div class="mp-info"><b>Pet Shop Patinhas</b><small><svg class="i" data-i="pin"></svg>Zona Sul · Unidade 2</small></div>
+            <div class="mp-mods"><i class="on">Agenda</i><i class="on">Loja</i><i>Cotações</i></div>
+            <span class="mp-st">Ativa</span>
+          </div>
+          <div class="mp-u" data-t="farma">
+            <span class="mp-ic" style="--c:#e8590c;--cs:#ffeedf"><svg class="i" data-i="pill"></svg></span>
+            <div class="mp-info"><b>Farmácia Vet Saúde</b><small><svg class="i" data-i="pin"></svg>Shopping Norte · Unidade 3</small></div>
+            <div class="mp-mods"><i>Agenda</i><i class="on">Loja</i><i class="on">Cotações</i></div>
+            <span class="mp-st">Ativa</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1228,6 +1314,7 @@ const IC = {
 };
 const svgI = k => `<svg viewBox="0 0 24 24" class="i">${IC[k] || ''}</svg>`;
 $$('svg[data-i]').forEach(s => { s.setAttribute('viewBox', '0 0 24 24'); s.classList.add('i'); s.innerHTML = IC[s.dataset.i] || ''; });
+$$('#mpanel .mp-tabs button').forEach(b => b.addEventListener('click', () => { $$('#mpanel .mp-tabs button').forEach(x => x.classList.toggle('on', x === b)); const f = b.dataset.f; $$('#mpanel .mp-u').forEach(u => u.classList.toggle('off', f !== 'all' && u.dataset.t !== f)); }));
 
 /* ================= BÁSICOS: reveal, tilt, progresso, contadores ================= */
 onView($$('.rv'), el => el.classList.add('in'));

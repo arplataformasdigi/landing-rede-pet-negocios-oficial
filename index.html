@@ -344,6 +344,79 @@ section[id]{scroll-margin-top:74px}
 .mp-mods i{font-style:normal;font-size:10.5px;font-weight:600;color:var(--muted2);border:1px dashed var(--line);padding:3px 8px;border-radius:100px}
 .mp-mods i.on{color:var(--green-d);background:var(--lime-soft);border:1px solid rgba(30,138,94,.2)}
 .mp-st{font-family:var(--mono);font-size:10px;font-weight:700;color:var(--green-d);background:var(--lime-soft);padding:4px 8px;border-radius:100px}
+/* ---------- pacote de vendas ---------- */
+.pacote{background:var(--bg2)}
+.pv-row{display:grid;grid-template-columns:1fr;gap:32px;align-items:center;margin-top:64px}
+.pv-k{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green-d)}
+.pv-txt h3{font-size:clamp(26px,3.2vw,38px);line-height:1.08;letter-spacing:-.035em;font-weight:800;margin:12px 0 14px}
+.pv-txt>p{font-size:16.5px;line-height:1.6;color:var(--muted)}
+.pv-txt ul{list-style:none;margin-top:22px;display:flex;flex-direction:column;gap:11px}
+.pv-txt li{display:flex;gap:10px;align-items:flex-start;font-size:15px;color:#3c4148}
+.pv-txt li svg{color:var(--green);width:19px;height:19px;margin-top:1px}
+.pv-stage{position:relative;display:flex;flex-direction:column;align-items:center}
+.pv-phone{width:100%;max-width:340px;background:#fff;border:9px solid var(--ink);border-radius:38px;box-shadow:0 40px 70px -36px rgba(17,20,24,.45);overflow:hidden;font-size:13.5px;line-height:1.35;color:var(--ink);text-align:left}
+.pv-top{display:flex;justify-content:space-between;align-items:center;padding:16px 16px 12px;border-bottom:1px solid var(--line)}
+.pv-top b{font-size:16px;letter-spacing:-.02em}
+.pv-top small{font-size:12.5px;color:var(--muted)}
+.pv-body{padding:12px;display:flex;flex-direction:column;gap:10px;background:var(--bg)}
+.pv-item{display:flex;gap:10px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px}
+.pv-item p{flex:1;min-width:0}
+.pv-item b{display:block;font-size:13.5px;line-height:1.25;font-weight:600}
+.pv-item span{display:block;font-size:13.5px;font-weight:800;margin-top:2px}
+.pv-item em{font-style:normal;font-size:12.5px;color:var(--muted);border:1px solid var(--line);border-radius:8px;padding:3px 8px}
+.pv-th{width:46px;height:46px;border-radius:12px;background:var(--cs,var(--bg2));color:var(--c,var(--muted));display:grid;place-items:center;flex:none}
+.pv-lbl{display:flex;align-items:center;gap:7px;font-size:13.5px;font-weight:800;margin-top:4px}
+.pv-lbl svg{width:16px;height:16px;color:var(--green)}
+.pv-cj{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+.pv-cj>div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:7px;display:flex;flex-direction:column;gap:4px}
+.pv-cj .pv-th{width:100%;height:50px}
+.pv-cj b{font-size:12px;line-height:1.2;font-weight:600;min-height:2.4em}
+.pv-cj span{font-size:12.5px;font-weight:800}
+.pv-cj button{font-size:11.5px;font-weight:700;background:var(--ink);color:#fff;border-radius:999px;padding:7px 0;margin-top:auto;transition:background .25s,color .25s}
+.pv-cj button.on{background:var(--lime-soft);color:var(--green-d)}
+.pv-foot{padding:12px 14px 16px;border-top:1px solid var(--line);background:#fff}
+.pv-sum{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-size:13.5px;padding:3px 0;color:#3c4148}
+.pv-sum.tot{font-weight:800;color:var(--ink);font-size:15px;border-top:1px dashed var(--line);margin-top:6px;padding-top:9px}
+.pv-sum s{color:var(--muted2);margin-right:6px}
+.pv-g{color:var(--green);font-weight:800}
+.pv-cta{display:block;text-align:center;background:var(--ink);color:#fff;font-weight:700;font-size:13.5px;padding:11px;border-radius:999px;margin-top:10px}
+.pv-prog{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px}
+.pv-prog>p{display:flex;gap:9px;align-items:flex-start;font-size:13.5px;line-height:1.3}
+.pv-prog>p svg{width:18px;height:18px;color:var(--green);margin-top:1px}
+.pv-bar{height:10px;border-radius:99px;background:#e2e0da;overflow:hidden;margin-top:10px}
+.pv-bar i{display:block;height:100%;width:var(--w);border-radius:99px;background:var(--green);transform:scaleX(0);transform-origin:left;transition:transform 1.3s .35s cubic-bezier(.2,.8,.2,1)}
+.rv.in .pv-bar i{transform:none}
+.pv-of{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-top:6px}
+.pv-of b{color:var(--ink)}
+.pv-ticks{position:relative;height:18px;margin-top:5px;font-size:11.5px;color:var(--muted2);font-weight:600}
+.pv-ticks span{position:absolute;top:0;transform:translateX(-50%);white-space:nowrap}
+.pv-ticks span.ok{color:var(--green-d)}
+.pv-ticks span:last-child{transform:translateX(-100%)}
+.pv-tier{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:9px 10px}
+.pv-tier .pv-th{width:38px;height:38px;border-radius:11px}
+.pv-tier .pv-th svg{width:18px;height:18px}
+.pv-tier p{flex:1;min-width:0}
+.pv-tier b{display:block;font-size:13.5px;font-weight:700;line-height:1.2}
+.pv-tier small{font-size:12px;color:var(--muted)}
+.pv-tier.off b{color:var(--muted)}
+.pv-badge{display:inline-flex;align-items:center;gap:4px;font-size:11.5px;font-weight:700;padding:4px 9px;border-radius:99px;white-space:nowrap;color:var(--muted);background:var(--bg2)}
+.pv-badge svg{width:13px;height:13px}
+.pv-badge.ok{color:var(--green-d);background:var(--lime-soft)}
+.pv-float{position:relative;z-index:2;width:100%;max-width:290px;margin-top:-12px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:14px 16px;box-shadow:0 30px 60px -28px rgba(17,20,24,.5);font-size:13.5px;text-align:left}
+.pv-float h6{font-size:14px;font-weight:800;margin:10px 0 4px}
+.pv-end{margin-top:72px;background:var(--lime-soft);border:1px solid rgba(30,138,94,.18);border-radius:28px;padding:28px 22px;display:grid;grid-template-columns:1fr;gap:22px;align-items:center}
+.pv-end h3{font-size:clamp(22px,2.6vw,30px);line-height:1.15;letter-spacing:-.03em;font-weight:800}
+.pv-end p{font-size:16px;line-height:1.55;color:#3c4148;margin-top:12px}
+.pv-end small{display:block;font-size:13px;line-height:1.5;color:var(--muted);margin-top:12px}
+.pv-end .btn{justify-self:start}
+@media (min-width:981px){
+  .pv-row{grid-template-columns:1fr 1fr;gap:64px;margin-top:100px}
+  .pv-row.rev .pv-txt{order:2}
+  .pv-stage.two{align-items:flex-start;padding-left:20px}
+  .pv-float{position:absolute;right:0;bottom:44px;margin-top:0;width:250px}
+  .pv-end{grid-template-columns:1fr auto;gap:40px;padding:48px;margin-top:100px}
+  .pv-end .btn{justify-self:end}
+}
 
 /* ---------- dashboard de gestão ---------- */
 .gestao{background:var(--night);overflow:hidden}
@@ -1160,6 +1233,157 @@ footer small{flex-basis:100%;font-family:var(--mono);font-size:12px}
   </div>
 </section>
 
+<!-- ================= PACOTE DE VENDAS ================= -->
+<section class="pad pacote" id="pacote">
+  <div class="container">
+    <div class="center">
+      <span class="tag rv"><svg class="i" data-i="sparkle" style="width:14px;height:14px"></svg>Exclusivo do Plano Plus</span>
+      <h2 class="h2 rv">Faça cada pedido <span class="hl">valer mais</span></h2>
+      <p class="sub rv">Três ferramentas que trabalham dentro do carrinho do seu cliente: sugerem o próximo produto, dão um motivo para ele comprar mais e mostram quanto falta para ganhar.</p>
+    </div>
+
+    <!-- 1 · Compre junto -->
+    <div class="pv-row">
+      <div class="pv-txt rv">
+        <span class="pv-k">Ferramenta 01</span>
+        <h3>Compre junto</h3>
+        <p>Você escolhe, no cadastro de cada produto, o que combina com ele. Quando o cliente coloca a ração no carrinho, a loja sugere o petisco, o comedouro, o tapete higiênico. A sugestão aparece na hora em que ele adiciona o produto e continua visível dentro do carrinho.</p>
+        <ul>
+          <li><svg class="i" data-i="checkc"></svg>Você decide o que sugerir em cada produto</li>
+          <li><svg class="i" data-i="checkc"></svg>Um toque para adicionar, sem sair do carrinho</li>
+          <li><svg class="i" data-i="checkc"></svg>Só aparecem produtos com estoque</li>
+        </ul>
+      </div>
+      <div class="pv-stage rv" style="--d:1">
+        <div class="pv-phone" id="pvCj">
+          <div class="pv-top"><b>Carrinho</b><small id="pvCount">1 item</small></div>
+          <div class="pv-body">
+            <div class="pv-item">
+              <span class="pv-th" style="--c:#e8590c;--cs:#ffeedf"><svg class="i" data-i="box"></svg></span>
+              <p><b>Ração Premium Cães Adultos 10 kg</b><span>R$ 189,90</span></p>
+              <em>1 un</em>
+            </div>
+            <div class="pv-lbl"><svg class="i" data-i="sparkle"></svg>Compre junto</div>
+            <div class="pv-cj">
+              <div><span class="pv-th" style="--c:#1e8a5e;--cs:#e6f6c4"><svg class="i" data-i="star"></svg></span><b>Petisco Dental</b><span>R$ 24,90</span><button type="button" data-p="24.9" aria-pressed="false">Adicionar</button></div>
+              <div><span class="pv-th" style="--c:#2a78d6;--cs:#e3efff"><svg class="i" data-i="drop"></svg></span><b>Comedouro Inox</b><span>R$ 39,90</span><button type="button" data-p="39.9" aria-pressed="false">Adicionar</button></div>
+              <div><span class="pv-th" style="--c:#7c3aed;--cs:#f1e8ff"><svg class="i" data-i="doc"></svg></span><b>Tapete Higiênico 30 un</b><span>R$ 59,90</span><button type="button" data-p="59.9" aria-pressed="false">Adicionar</button></div>
+            </div>
+          </div>
+          <div class="pv-foot">
+            <div class="pv-sum tot" style="border:0;margin:0;padding-top:0"><span>Subtotal</span><span id="pvSub">R$ 189,90</span></div>
+            <span class="pv-cta">Finalizar pedido</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2 · Frete grátis por valor de compra -->
+    <div class="pv-row rev">
+      <div class="pv-txt rv">
+        <span class="pv-k">Ferramenta 02</span>
+        <h3>Frete grátis a partir do valor que você definir</h3>
+        <p>Você escolhe o valor mínimo. O cliente vê no carrinho quanto falta para ganhar o frete e completa o pedido para chegar lá. Pode valer para a loja inteira ou só quando um produto específico está no carrinho.</p>
+        <ul>
+          <li><svg class="i" data-i="checkc"></svg>Você define o valor mínimo</li>
+          <li><svg class="i" data-i="checkc"></svg>Barra de progresso mostra quanto falta</li>
+          <li><svg class="i" data-i="checkc"></svg>Vale para a loja toda ou por produto</li>
+        </ul>
+      </div>
+      <div class="pv-stage two rv" style="--d:1">
+        <div class="pv-phone" role="img" aria-label="Carrinho no celular com dois produtos e a mensagem: faltam R$ 30,90 para ganhar frete grátis.">
+          <div class="pv-top"><b>Carrinho</b><small>2 itens</small></div>
+          <div class="pv-body">
+            <div class="pv-prog">
+              <p><svg class="i" data-i="truck"></svg><span>Faltam <b>R$ 30,90</b> para ganhar <b>frete grátis</b></span></p>
+              <div class="pv-bar"><i style="--w:88%"></i></div>
+              <div class="pv-of"><span><b>R$ 219,10</b> no carrinho</span><span>Meta: R$ 250,00</span></div>
+            </div>
+            <div class="pv-item">
+              <span class="pv-th" style="--c:#e8590c;--cs:#ffeedf"><svg class="i" data-i="box"></svg></span>
+              <p><b>Ração Premium Cães Adultos 10 kg</b><span>R$ 189,90</span></p>
+              <em>1 un</em>
+            </div>
+            <div class="pv-item">
+              <span class="pv-th" style="--c:#2a78d6;--cs:#e3efff"><svg class="i" data-i="drop"></svg></span>
+              <p><b>Shampoo Neutro 500 ml</b><span>R$ 29,20</span></p>
+              <em>1 un</em>
+            </div>
+          </div>
+          <div class="pv-foot">
+            <div class="pv-sum"><span>Subtotal</span><span>R$ 219,10</span></div>
+            <div class="pv-sum"><span>Taxa de entrega</span><span>R$ 12,00</span></div>
+            <div class="pv-sum tot"><span>Total</span><span>R$ 231,10</span></div>
+          </div>
+        </div>
+        <div class="pv-float" role="img" aria-label="Resumo do pedido com a meta atingida: taxa de entrega de R$ 12,00 riscada e a palavra Grátis.">
+          <span class="pv-badge ok"><svg class="i" data-i="check"></svg>Meta atingida</span>
+          <h6>Resumo do pedido</h6>
+          <div class="pv-sum"><span>Subtotal</span><span>R$ 259,00</span></div>
+          <div class="pv-sum"><span>Taxa de entrega</span><span><s>R$ 12,00</s><b class="pv-g">Grátis</b></span></div>
+          <div class="pv-sum tot"><span>Total</span><span>R$ 259,00</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 · Brindes por valor de compra -->
+    <div class="pv-row">
+      <div class="pv-txt rv">
+        <span class="pv-k">Ferramenta 03</span>
+        <h3>Brindes que o cliente vai liberando</h3>
+        <p>Monte faixas de valor e escolha um brinde do seu estoque para cada uma. Conforme o cliente coloca produtos no carrinho, os brindes vão sendo liberados, e ele leva todos os que conquistou. Vira um jogo: sempre há um próximo prêmio a poucos reais de distância.</p>
+        <ul>
+          <li><svg class="i" data-i="checkc"></svg>Os brindes acumulam: atingiu a segunda faixa, leva os dois</li>
+          <li><svg class="i" data-i="checkc"></svg>O brinde sai do seu estoque automaticamente</li>
+          <li><svg class="i" data-i="checkc"></svg>Brinde esgotado nunca trava a venda</li>
+        </ul>
+      </div>
+      <div class="pv-stage rv" style="--d:1">
+        <div class="pv-phone" role="img" aria-label="Carrinho no celular com a mensagem: faltam R$ 20,00 para ganhar Brinquedo Mordedor. Três faixas de brinde: Sachê Úmido liberado, Brinquedo Mordedor e Frete grátis ainda não liberados.">
+          <div class="pv-top"><b>Carrinho</b><small>2 itens · R$ 129,00</small></div>
+          <div class="pv-body">
+            <div class="pv-prog">
+              <p><svg class="i" data-i="gift"></svg><span>Faltam <b>R$ 20,00</b> para ganhar <b>Brinquedo Mordedor</b></span></p>
+              <div class="pv-bar"><i style="--w:64.8%"></i></div>
+              <div class="pv-ticks"><span class="ok" style="left:49.7%">R$ 99</span><span style="left:74.9%">R$ 149</span><span style="left:100%">R$ 199</span></div>
+            </div>
+            <div class="pv-tier">
+              <span class="pv-th" style="--c:#1e8a5e;--cs:#e6f6c4"><svg class="i" data-i="gift"></svg></span>
+              <p><b>Sachê Úmido</b><small>a partir de R$ 99</small></p>
+              <span class="pv-badge ok"><svg class="i" data-i="check"></svg>Liberado</span>
+            </div>
+            <div class="pv-tier off">
+              <span class="pv-th"><svg class="i" data-i="gift"></svg></span>
+              <p><b>Brinquedo Mordedor</b><small>a partir de R$ 149</small></p>
+              <span class="pv-badge"><svg class="i" data-i="lock"></svg>Falta pouco</span>
+            </div>
+            <div class="pv-tier off">
+              <span class="pv-th"><svg class="i" data-i="truck"></svg></span>
+              <p><b>Frete grátis</b><small>a partir de R$ 199</small></p>
+              <span class="pv-badge"><svg class="i" data-i="lock"></svg>A liberar</span>
+            </div>
+          </div>
+          <div class="pv-foot">
+            <div class="pv-sum"><span>Subtotal</span><span>R$ 129,00</span></div>
+            <div class="pv-sum"><span>Brinde: Sachê Úmido</span><b class="pv-g">Grátis</b></div>
+            <div class="pv-sum"><span>Taxa de entrega</span><span>R$ 12,00</span></div>
+            <div class="pv-sum tot"><span>Total</span><span>R$ 141,00</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pv-end rv">
+      <div>
+        <h3>O cliente escolhe: usar um cupom ou comprar um pouco mais e levar o brinde. Nos dois casos, você vende.</h3>
+        <p>As três ferramentas são configuradas por você, no cadastro do produto, e funcionam sozinhas na loja online do seu petshop.</p>
+        <small>O valor que libera frete grátis e brindes é o dos produtos, depois do cupom e do voucher. Você define as regras e o custo fica por sua conta.</small>
+      </div>
+      <a class="btn lg" href="Planos.dc.html#mensais">Conhecer o Plano Plus<svg class="i" data-i="arrow"></svg></a>
+    </div>
+  </div>
+</section>
+
 <!-- ================= NOVO: DASHBOARD DE GESTÃO ================= -->
 <section class="pad gestao on-dark" id="gestao">
   <div class="container">
@@ -1304,12 +1528,31 @@ const IC = {
   receipt:'<path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8M12 17.5v-11"/>',
   trophy:'<path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22M18 2H6v7a6 6 0 0 0 12 0V2Z"/>',
   doc:'<path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4M16 13H8M16 17H8M10 9H8"/>',
+  gift:'<rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5C11 3 12 8 12 8s1-5 4.5-5a2.5 2.5 0 0 1 0 5"/>',
+  lock:'<rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>',
   pin:'<path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/>',
   info:'<circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/>'
 };
 const svgI = k => `<svg viewBox="0 0 24 24" class="i">${IC[k] || ''}</svg>`;
 $$('svg[data-i]').forEach(s => { s.setAttribute('viewBox', '0 0 24 24'); s.classList.add('i'); s.innerHTML = IC[s.dataset.i] || ''; });
 $$('#mpanel .mp-tabs button').forEach(b => b.addEventListener('click', () => { $$('#mpanel .mp-tabs button').forEach(x => x.classList.toggle('on', x === b)); const f = b.dataset.f; $$('#mpanel .mp-u').forEach(u => u.classList.toggle('off', f !== 'all' && u.dataset.t !== f)); }));
+/* pacote de vendas: "Compre junto" soma no carrinho de exemplo */
+(() => {
+  const box = $('#pvCj'); if (!box) return;
+  const btns = $$('.pv-cj button', box), sub = $('#pvSub'), cnt = $('#pvCount');
+  const upd = () => {
+    const on = btns.filter(b => b.classList.contains('on'));
+    const tot = on.reduce((s, b) => s + parseFloat(b.dataset.p), 189.9);
+    sub.textContent = 'R$ ' + tot.toFixed(2).replace('.', ',');
+    cnt.textContent = on.length ? (on.length + 1) + ' itens' : '1 item';
+  };
+  btns.forEach(b => b.addEventListener('click', () => {
+    const on = b.classList.toggle('on');
+    b.textContent = on ? 'Adicionado' : 'Adicionar';
+    b.setAttribute('aria-pressed', on);
+    upd();
+  }));
+})();
 
 /* ================= BÁSICOS: reveal, tilt, progresso, contadores ================= */
 onView($$('.rv'), el => el.classList.add('in'));
